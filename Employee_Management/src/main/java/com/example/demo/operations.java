@@ -48,7 +48,7 @@ public List<employee> getEmployeeById(@PathVariable("id") int id)
 }
 
 @GetMapping("employee/name/{employeeName}")
-public List<employee> getCarByModel(@PathVariable("employeeName") String employeeName)
+public List<employee> getByName(@PathVariable("employeeName") String employeeName)
 {
 	return ob.findByName(employeeName);
 }
@@ -68,7 +68,7 @@ public String update(@RequestBody employee x,@PathVariable("id") int id)
 public String deleteById(@PathVariable("id") int id)
 {
 	ob.deleteAllByIdInBatch(id);
-	return "Items deleted successfully";
+	return "Deleted successfully";
 }
 }
 
